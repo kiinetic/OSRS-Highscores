@@ -1,0 +1,16 @@
+C:\Users\Colby\Desktop\OSRS Highscores\OSRS Highscores\bin\Debug\OSRS Highscores.exe.config
+C:\Users\Colby\Desktop\OSRS Highscores\OSRS Highscores\bin\Debug\OSRS Highscores.exe
+C:\Users\Colby\Desktop\OSRS Highscores\OSRS Highscores\bin\Debug\OSRS Highscores.pdb
+C:\Users\Colby\Desktop\OSRS Highscores\OSRS Highscores\obj\Debug\OSRS_Highscores.Form1.resources
+C:\Users\Colby\Desktop\OSRS Highscores\OSRS Highscores\obj\Debug\OSRS_Highscores.Properties.Resources.resources
+C:\Users\Colby\Desktop\OSRS Highscores\OSRS Highscores\obj\Debug\OSRS Highscores.csproj.GenerateResource.Cache
+C:\Users\Colby\Desktop\OSRS Highscores\OSRS Highscores\obj\Debug\OSRS Highscores.exe
+C:\Users\Colby\Desktop\OSRS Highscores\OSRS Highscores\obj\Debug\OSRS Highscores.pdb
+F:\Projects\OSRS Highscores\OSRS Highscores\obj\Debug\OSRS_Highscores.OSRSHighscores.resources
+F:\Projects\OSRS Highscores\OSRS Highscores\obj\Debug\OSRS_Highscores.Properties.Resources.resources
+F:\Projects\OSRS Highscores\OSRS Highscores\obj\Debug\OSRS Highscores.csproj.GenerateResource.Cache
+F:\Projects\OSRS Highscores\OSRS Highscores\bin\Debug\OSRS Highscores.exe.config
+F:\Projects\OSRS Highscores\OSRS Highscores\bin\Debug\OSRS Highscores.exe
+F:\Projects\OSRS Highscores\OSRS Highscores\bin\Debug\OSRS Highscores.pdb
+F:\Projects\OSRS Highscores\OSRS Highscores\obj\Debug\OSRS Highscores.exe
+F:\Projects\OSRS Highscores\OSRS Highscores\obj\Debug\OSRS Highscores.pdb
