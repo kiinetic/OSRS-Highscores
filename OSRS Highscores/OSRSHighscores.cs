@@ -17,12 +17,11 @@ namespace OSRS_Highscores {
             InitializeComponent();
             Control.CheckForIllegalCrossThreadCalls = false; // ignore illegal cross threaded calls for simplicity
         }
-        const int STEP_SIZE = 10;
-
         List<Player> players = new List<Player>();
 
         Stopwatch sw;
 
+        const int STEP_SIZE = 10;
         int threadsCompleted;
         int start;
         int playersCompleted;
@@ -56,7 +55,7 @@ namespace OSRS_Highscores {
             for(int m = start; m < end; m++) {
                 string[] dataSplit;
                 WebRequest request = WebRequest.Create("http://services.runescape.com/m=hiscore_oldschool/overall.ws?table=0&page=" + m);
-                request.Proxy = null; // this apparently helps speed the process up a bit... unsure of its effectiveness
+                request.Proxy = null; // apparently helps speed the process up a bit... unsure of its effectiveness
                 WebResponse response = request.GetResponse();
                 Stream dataStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(dataStream);
@@ -80,7 +79,7 @@ namespace OSRS_Highscores {
                         response.Close();
                         reader.Close();
                         for(int l = 0; l < userData.Length; l++) {
-                            if(l > 2 && l % 2 != 0 && !userData[l].Contains("-1") && l < 48) // browser renders junk
+                            if(l > 2 && l % 2 != 0 && !userData[l].Contains("-1") && l < 48) // pure html again
                                 tempStats.Add(int.Parse(userData[l]));
                         }
                         players.Add(new Player(tempStats[0], tempStats[1], tempStats[2], tempStats[3], tempStats[4], tempStats[5], tempStats[6], tempStats[7], tempStats[8], tempStats[9],
@@ -88,58 +87,11 @@ namespace OSRS_Highscores {
                             tempStats[21], tempStats[22], replacedName));
                         tempStats.Clear();
                         playersCompleted++;
-                        listBox1.Items.Add(playersCompleted + " players completed");
+                        //listBox1.Items.Add(playersCompleted + " players completed");
                     }
                 }
                 listBox1.Items.Add("page " + m + " done");
             }
-
-
-
-
-            //Stopwatch stopWatch = new Stopwatch();
-            //List<int> tempStats = new List<int>();
-            //string[] dataSplit;
-            //int numOfPlayers = 0;
-            //WebRequest request = WebRequest.Create("http://services.runescape.com/m=hiscore_oldschool/overall.ws?table=0&page=" + e.Argument);
-            //request.Proxy = null;
-            //WebResponse response = request.GetResponse();
-            //Stream dataStream = response.GetResponseStream();
-            //StreamReader reader = new StreamReader(dataStream);
-            //string strResponse = reader.ReadToEnd();
-            //reader.Close();
-            //response.Close();
-            //string[] userData;
-            //dataSplit = strResponse.Split(new char[] {'\n'}, StringSplitOptions.RemoveEmptyEntries);
-            //for(int i = 0; i < dataSplit.Length; i++) {
-            //    if(dataSplit[i].Contains("hiscorepersonal.ws?user1=")) {
-            //        stopWatch.Start();
-            //        int startIndex = dataSplit[i].IndexOf('>') + 1;
-            //        int endIndex = dataSplit[i].LastIndexOf('<');
-            //        string name = dataSplit[i].Substring(startIndex, endIndex - startIndex);
-            //        string test = name.Replace("�", "%20");
-            //        request = WebRequest.Create("http://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player=" + test);
-            //        response = request.GetResponse();
-            //        dataStream = response.GetResponseStream();
-            //        reader = new StreamReader(dataStream);
-            //        strResponse = reader.ReadToEnd();
-            //        userData = strResponse.Split(',');
-            //        response.Close();
-            //        reader.Close();
-            //        for(int l = 0; l < userData.Length; l++) {
-            //            if(l > 2 && l % 2 != 0 && !userData[l].Contains("-1") && l < 48) // browser renders crap 
-            //                tempStats.Add(int.Parse(userData[l]));
-            //        }
-            //        players.Add(new Player(tempStats[0], tempStats[1], tempStats[2], tempStats[3], tempStats[4], tempStats[5], tempStats[6], tempStats[7], tempStats[8], tempStats[9],
-            //            tempStats[10], tempStats[11], tempStats[12], tempStats[13], tempStats[14], tempStats[15], tempStats[16], tempStats[17], tempStats[18], tempStats[19], tempStats[20],
-            //            tempStats[21], tempStats[22], test));
-            //        stopWatch.Stop();
-            //        listBox1.Items.Add("took " + stopWatch.Elapsed.Milliseconds + " ms to complete person " + numOfPlayers);
-            //        numOfPlayers++;
-            //        tempStats.Clear();
-
-            //    }
-            //}
         }
     }
 }
